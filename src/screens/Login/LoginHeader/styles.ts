@@ -2,6 +2,7 @@ import { colors } from "@src/constants/globalsStyles";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
+  header: { marginBottom: 60 },
   btnText: {
     color: colors.blue,
     fontSize: 15,

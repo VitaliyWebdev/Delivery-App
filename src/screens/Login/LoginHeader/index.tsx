@@ -13,6 +13,7 @@ const LoginHeader = () => {
 
   return (
     <Header
+    headerStyle={s.header}
       rightComponent={
         <Button
           label="Sign Up"

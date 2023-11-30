@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   titleWrapper: {
-    marginTop: 60,
+    marginBottom: 32,
   },
   title: {
     color: "#000",
