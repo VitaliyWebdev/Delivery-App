@@ -1,15 +1,12 @@
-import { Text, View, TouchableOpacity } from "react-native";
+import SafeViewWrapper from "@src/components/SafeViewWrapper";
+import { FC } from "react";
+import LoginHeader from "./LoginHeader";
 
-const Login = ({ navigation }) => {
-  
-  const onNavigateToSignUp = () => navigation.navigate("SignUp");
-
+const Login: FC = () => {
   return (
-    <View>
-      <TouchableOpacity onPress={onNavigateToSignUp}>
-        <Text>Navigate to Sign Up screen</Text>
-      </TouchableOpacity>
-    </View>
+    <SafeViewWrapper>
+      <LoginHeader />
+    </SafeViewWrapper>
   );
 };
 
