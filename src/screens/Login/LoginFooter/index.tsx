@@ -10,7 +10,6 @@ const LoginFooter: FC = () => {
   const onGoToSignUp = () => navigate(publicRoutes.SignUp);
 
   return (
-    // <TouchableOpacity onPress={onGoToSignUp} style={s.footer}>
     <Button
       label={"Forgot password?"}
       buttonProps={{ style: s.footer, onPress: onGoToSignUp }}
@@ -20,7 +19,3 @@ const LoginFooter: FC = () => {
 };
 
 export default LoginFooter;
-//   <Text style={s.footerLabel}>Forgot password?</Text>
-{
-  /* </TouchableOpacity> */
-}
