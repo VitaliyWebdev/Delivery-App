@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingHorizontal: 16,
     paddingVertical: 14,
-    marginBottom: 16,
+    marginBottom: 24,
     borderWidth: 1,
     borderColor: colors.lightGrey,
   },
@@ -24,6 +24,9 @@ const styles = StyleSheet.create({
   },
   inputErrorLabel: {
     color: "red",
+    position: "absolute",
+    bottom: -20,
+    fontSize: 12,
   },
 });
 
