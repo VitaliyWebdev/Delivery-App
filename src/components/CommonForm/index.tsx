@@ -1,25 +1,17 @@
 import LockIcon from "@src/assets/icons/LockIcon";
 import PersonIcon from "@src/assets/icons/PersonIcon";
-import Button from "@src/components/Button";
-import Input from "@src/components/Input";
+import Button from "@src/components/Atoms/Button";
+import Input from "@src/components/Atoms/Input";
 import { Formik } from "formik";
 import { FC } from "react";
 import { View } from "react-native";
 import s from "./styles";
 import { signInSchema } from "./schema";
-
-type TInitialValues = {
-  email: string;
-  password: string;
-};
+import { TCommonForm, TInitialValues } from "@src/types/commonForm";
 
 const initialValues: TInitialValues = { email: "", password: "" };
 
-type TLoginForm = {
-  onSubmit: (values: TInitialValues) => void;
-};
-
-const LoginForm: FC<TLoginForm> = ({ onSubmit }) => {
+const CommonForm: FC<TCommonForm> = ({ onSubmit, submitLabel }) => {
   return (
     <View>
       <Formik
@@ -59,7 +51,7 @@ const LoginForm: FC<TLoginForm> = ({ onSubmit }) => {
                   style: s.submitButton,
                 }}
                 textProps={{ style: s.buttonLabel }}
-                label="Submit"
+                label={submitLabel}
               />
             </>
           );
@@ -69,4 +61,4 @@ const LoginForm: FC<TLoginForm> = ({ onSubmit }) => {
   );
 };
 
-export default LoginForm;
+export default CommonForm;

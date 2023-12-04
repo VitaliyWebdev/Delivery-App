@@ -1,9 +1,8 @@
+import Button from "@src/components/Atoms/Button";
 import { publicRoutes } from "@src/constants/routes";
 import { useAppNavigation } from "@src/hooks/useAppNavigation";
 import { FC } from "react";
-import { Text, TouchableOpacity } from "react-native";
 import s from "./styles";
-import Button from "@components/Button";
 
 const LoginFooter: FC = () => {
   const { navigate } = useAppNavigation();

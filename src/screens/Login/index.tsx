@@ -1,19 +1,28 @@
-import SafeViewWrapper from "@components/SafeViewWrapper";
+import WithCommonLayout from "@components/Organisms/WithCommonLayout";
+import { publicRoutes } from "@src/constants/routes";
+import { useAppNavigation } from "@src/hooks/useAppNavigation";
 import { FC } from "react";
-import LoginHeader from "./LoginHeader";
-import LoginTitle from "./LoginTitle";
-import LoginForm from "./LoginForm";
-import LoginFooter from "./LoginFooter";
 
 const Login: FC = () => {
   const onLogin = (values) => {};
+
+  const { navigate } = useAppNavigation();
+  const onNavigateToSignUp = () => navigate(publicRoutes.SignUp);
   return (
-    <SafeViewWrapper>
-      <LoginHeader />
-      <LoginTitle />
-      <LoginForm onSubmit={onLogin} />
-      <LoginFooter />
-    </SafeViewWrapper>
+    <WithCommonLayout
+      onFormSubmit={() => {
+        console.log(23);
+      }}
+      headerProps={{
+        onPress: onNavigateToSignUp,
+        label: "Sign Up",
+      }}
+      titleProps={{
+        title: `Welcome to \nConverse CRM!`,
+        subtitle: "",
+      }}
+      formProps={{ onSubmit: onLogin, submitLabel: "Sign In" }}
+    />
   );
 };
 
