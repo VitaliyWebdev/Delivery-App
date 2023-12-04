@@ -6,9 +6,13 @@ import {
   TouchableOpacityProps,
 } from "react-native";
 
+type TButtonProps = TouchableOpacityProps & {
+  onPress: (e: React.FormEvent<HTMLFormElement>) => void;
+};
+
 type TButton = {
   label: string;
-  buttonProps?: TouchableOpacityProps;
+  buttonProps?: TButtonProps;
   textProps?: TextProps;
 };
 
