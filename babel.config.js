@@ -9,11 +9,12 @@ module.exports = function (api) {
           root: ["."],
           alias: {
             // This has to be mirrored in tsconfig.json
-            "@src": "./src",
             "@screens": "./src/screens",
             "@components": "./src/components",
             "@constants": "./src/constants",
             "@routes": "./src/routes",
+            "@hooks": "./src/hooks",
+            "@src": "./src",
           },
         },
       ],

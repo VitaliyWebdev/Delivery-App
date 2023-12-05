@@ -3,6 +3,7 @@ import * as Contacts from "expo-contacts";
 
 export const useContacts = () => {
   const [contacts, setContacts] = useState<Contacts.Contact[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   useEffect(() => {
     const fetchContacts = async () => {
@@ -25,5 +26,23 @@ export const useContacts = () => {
 
     fetchContacts();
   }, []);
-  return contacts;
+
+  const filterContacts = (term: string) => {
+    if (!term) {
+      // If the term is empty, return the original array
+      return contacts;
+    }
+
+    // Filter contacts based on the search term
+    const filteredContacts = contacts.filter((contact) => {
+      const fullName = `${contact.firstName || ""} ${contact.lastName || ""}`;
+      return fullName.toLowerCase().includes(term.toLowerCase());
+    });
+
+    return filteredContacts;
+  };
+
+  const getFilteredContacts = () => filterContacts(searchTerm);
+
+  return { contacts: getFilteredContacts(), setSearchTerm };
 };

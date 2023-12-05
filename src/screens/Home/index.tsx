@@ -4,15 +4,16 @@ import ContactItem from "./ContactItem";
 import HomeHeader from "./HomeHeader";
 
 const Home = () => {
-  const contacts = useContacts();
+  const { contacts, setSearchTerm } = useContacts();
   return (
     <FlatList
-      ListHeaderComponent={HomeHeader}
+      ListHeaderComponent={<HomeHeader setSearchTerm={setSearchTerm} />}
       data={contacts}
       renderItem={({ item, index }) => (
         <ContactItem contact={item} index={index} />
       )}
       keyExtractor={({ id }) => id.toString()}
+      stickyHeaderIndices={[0]}
     />
   );
 };
