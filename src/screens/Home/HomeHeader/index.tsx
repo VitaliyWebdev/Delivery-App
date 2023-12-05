@@ -19,15 +19,7 @@ const HomeHeader: FC<THomeHeader> = ({ setSearchTerm }) => {
         ...s.header,
         paddingTop: insets.top + PADDING_FROM_SAFE_AREA,
       }}
-      leftComponent={
-        <Text
-          style={
-            s.headerText,
-          }
-        >
-          Calls
-        </Text>
-      }
+      leftComponent={<Text style={s.headerText}>Calls</Text>}
       rightComponent={
         <ExpandableInput textInputProps={{ onChangeText: setSearchTerm }} />
       }
