@@ -3,7 +3,13 @@ import Login from "@screens/Login";
 import SignUp from "@screens/SignUp";
 import { publicRoutes } from "@src/constants/routes";
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+  Login: undefined;
+  SignUp: undefined;
+  Home: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParams>();
 
 const screenOptions = {
   headerShown: false,

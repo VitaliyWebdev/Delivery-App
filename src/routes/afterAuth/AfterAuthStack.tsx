@@ -1,15 +1,16 @@
-import { createStackNavigator } from "@react-navigation/stack";
-import Login from "@screens/Login";
-import SignUp from "@screens/SignUp";
+import Home from "@src/screens/Home";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-const Stack = createStackNavigator();
-
-const AuthStack = () => {
+const Tab = createBottomTabNavigator();
+const MainTabs = () => {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Login" component={Login} />
-    </Stack.Navigator>
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{ headerShown: false }}
+    >
+      <Tab.Screen name="Calls" component={Home} />
+    </Tab.Navigator>
   );
 };
 
-export default AuthStack;
+export default MainTabs;

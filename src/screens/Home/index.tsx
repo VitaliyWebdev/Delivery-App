@@ -1,10 +1,19 @@
-import { Text, View, TouchableOpacity } from "react-native";
+import { useContacts } from "@hooks/useContacts";
+import { FlatList } from "react-native";
+import ContactItem from "./ContactItem";
+import HomeHeader from "./HomeHeader";
 
-const Home = ({ navigation }) => {
+const Home = () => {
+  const contacts = useContacts();
   return (
-    <View>
-      <Text>Home</Text>
-    </View>
+    <FlatList
+      ListHeaderComponent={HomeHeader}
+      data={contacts}
+      renderItem={({ item, index }) => (
+        <ContactItem contact={item} index={index} />
+      )}
+      keyExtractor={({ id }) => id.toString()}
+    />
   );
 };
 
