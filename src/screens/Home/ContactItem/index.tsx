@@ -8,7 +8,6 @@ type TContactItem = {
   contact: Contact;
   index: number;
 };
-
 const ContactItem: FC<TContactItem> = ({ contact, index }) => {
   const { firstName = "", lastName = "", image } = contact;
 

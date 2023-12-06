@@ -1,14 +1,16 @@
+import { UserProvider } from "@components/Organisms/UserProvider";
 import { NavigationContainer } from "@react-navigation/native";
-import MainTabs from "@src/routes/afterAuth/AfterAuthStack";
-import AuthStack from "@src/routes/beforeAuth/AuthStack";
+import MainNavigation from "@routes/MainNavigation";
 import "react-native-gesture-handler";
 
-export default function App() {
-  const isSignedIn = true;
 
+
+export default function App() {
   return (
-    <NavigationContainer>
-      {isSignedIn ? <MainTabs /> : <AuthStack />}
-    </NavigationContainer>
+    <UserProvider>
+      <NavigationContainer>
+        <MainNavigation />
+      </NavigationContainer>
+    </UserProvider>
   );
 }
